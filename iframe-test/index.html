@@ -3,17 +3,7 @@
 	<meta charset="UTF-8">
 	<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script class="overlayer" type="text/p5">
-
-
-		function setup() {
-		  createCanvas(100, 100);
-		}
-
-		function draw() {
-		  background(255, 0, 200);
-		}
-		</script>
+	<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
 
 
 <style type="text/css">
@@ -72,11 +62,21 @@
 	    color: blue;
 	}
 
-	div {
+	.div1 {
 		width: 100vw;
 		height: 100vh;
 	    padding: 0;
-	    border: 30px solid yellow;
+	    border: 20px solid yellow;
+	    /*border-bottom-width: 50px;*/
+	    vertical-align: baseline;
+		box-sizing: border-box;
+	}
+
+	.div2 {
+		width: 100vw;
+		height: 100vh;
+	    padding: 0;
+	    border-bottom: 50px solid white;
 	    vertical-align: baseline;
 		box-sizing: border-box;
 	}
@@ -87,13 +87,37 @@
 
 <body>
 
-		<div class="overlayer"> 
+		<a-assets>
+
+		    <a-asset-item id="pineapple" src="Pinenapple_3.obj"></a-asset-item>
+		</a-assets>
+
+		<a-scene class="overlayer">
+
+		<a-obj-model src="#pineapple" 
+		position= "0 2 0" scale="0.2 0.2 0.2">
+		</a-obj-model>
+
+	</a-scene>
+
+
+
+
+
+
+		<div class="overlayer div2">
+		 </div>
+
+		<div class="overlayer div1"> 
 
 		<p>
 			Welcome to my site, I am a UX | Graphic Designer
 		</P> 
 
 		 </div> 
+
+		
+
 
 		<iframe frameborder="0" id="portfo" src="http://chloek.portfoliobox.io/">
 
